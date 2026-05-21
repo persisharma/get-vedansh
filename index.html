@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Get Vedansh</title>
+<meta name="description" content="Download Vedansh on iOS or Android.">
+<meta name="theme-color" content="#e9d8a6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #3a2a14;
+    --ink-soft: #5a4326;
+    --parchment-1: #f5e6c4;
+    --parchment-2: #e9d8a6;
+    --parchment-3: #d9c184;
+    --edge: #8a6a3a;
+    --accent: #7a3b16;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+    color: var(--ink);
+    background:
+      radial-gradient(ellipse at top, #f3e2b8 0%, #e7d29a 45%, #d6bb7f 100%);
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow-x: hidden;
+  }
+  .scroll {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    padding: 56px 40px 48px;
+    border-radius: 18px;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.45), transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(122,59,22,0.10), transparent 55%),
+      radial-gradient(circle at 60% 40%, rgba(255,250,230,0.30), transparent 60%),
+      linear-gradient(135deg, var(--parchment-1) 0%, var(--parchment-2) 55%, var(--parchment-3) 100%);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.55) inset,
+      0 0 0 1px rgba(138,106,58,0.35) inset,
+      0 30px 60px -20px rgba(60,40,15,0.45),
+      0 10px 25px -10px rgba(60,40,15,0.35);
+    border: 1px solid rgba(138,106,58,0.45);
+  }
+  .scroll::before, .scroll::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 22px;
+    background:
+      radial-gradient(circle at 8px 11px, var(--parchment-2) 7px, transparent 8px) repeat-x 0 0 / 16px 22px,
+      linear-gradient(var(--edge), #6b5028);
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(60,40,15,0.35);
+  }
+  .scroll::before { top: -14px; }
+  .scroll::after { bottom: -14px; }
+  .stains {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(122,59,22,0.10) 0 14px, transparent 15px),
+      radial-gradient(circle at 88% 22%, rgba(122,59,22,0.08) 0 22px, transparent 23px),
+      radial-gradient(circle at 78% 78%, rgba(122,59,22,0.07) 0 30px, transparent 31px),
+      radial-gradient(circle at 22% 86%, rgba(122,59,22,0.06) 0 18px, transparent 19px);
+    mix-blend-mode: multiply;
+    opacity: 0.7;
+  }
+  .ornament {
+    text-align: center;
+    color: var(--edge);
+    letter-spacing: 0.4em;
+    font-size: 14px;
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(36px, 6vw, 52px);
+    letter-spacing: 0.04em;
+    margin: 6px 0 6px;
+    color: var(--ink);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .tagline {
+    text-align: center;
+    font-style: italic;
+    font-size: clamp(16px, 2.2vw, 19px);
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+  }
+  .rule {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 28px;
+    color: var(--edge);
+  }
+  .rule::before, .rule::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--edge), transparent);
+  }
+  .rule span { font-size: 14px; letter-spacing: 0.3em; }
+  .note {
+    text-align: center;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: #fbf3dd;
+    background: linear-gradient(180deg, #4a341a, #2e1f0c);
+    border: 1px solid #2a1c0a;
+    box-shadow:
+      0 1px 0 rgba(255,235,200,0.18) inset,
+      0 6px 14px -6px rgba(0,0,0,0.45);
+    transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+  }
+  .btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+    box-shadow:
+      0 1px 0 rgba(255,235,200,0.22) inset,
+      0 10px 18px -8px rgba(0,0,0,0.5);
+  }
+  .btn:active { transform: translateY(0); }
+  .btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .btn small {
+    display: block;
+    font-family: "EB Garamond", Georgia, serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+  .btn-text { text-align: left; line-height: 1.1; }
+  .footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll { animation: rise 600ms ease-out both; }
+    @keyframes rise {
+      from { transform: translateY(8px); opacity: 0; }
+      to   { transform: translateY(0);   opacity: 1; }
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="scroll" role="main">
+    <div class="stains" aria-hidden="true"></div>
+    <p class="ornament">&#10086; &middot; &#10086; &middot; &#10086;</p>
+    <h1>Vedansh</h1>
+    <p class="tagline">A humble offering &mdash; fetch the app from thy store</p>
+
+    <div class="rule"><span>CHOOSE THY STORE</span></div>
+
+    <p class="note" id="note">Redirecting you to the right store&hellip;</p>
+
+    <div class="buttons">
+      <a class="btn" id="ios" href="https://apps.apple.com/app/vedansh/id6766086529" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <path d="M16.365 1.43c0 1.14-.46 2.23-1.21 3.02-.81.86-2.13 1.52-3.22 1.43-.14-1.09.43-2.24 1.18-3.02.82-.86 2.24-1.52 3.25-1.43zM20.5 17.27c-.55 1.27-.81 1.84-1.52 2.96-.99 1.56-2.39 3.51-4.12 3.53-1.54.01-1.94-1-4.03-.99-2.09.01-2.52 1-4.06.99-1.73-.02-3.06-1.77-4.05-3.33-2.77-4.36-3.06-9.48-1.35-12.2C2.62 6.31 4.49 5.2 6.25 5.2c1.79 0 2.92 1 4.4 1 1.43 0 2.31-1 4.38-1 1.57 0 3.23.86 4.42 2.34-3.88 2.13-3.25 7.74 1.05 9.73z"/>
+        </svg>
+        <span class="btn-text">
+          <small>Download on the</small>
+          App Store
+        </span>
+      </a>
+
+      <a class="btn" id="android" href="https://play.google.com/store/apps/details?id=com.prashantsharma.vedansh" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <path d="M3.6 1.5c-.3.3-.5.7-.5 1.2v18.6c0 .5.2.9.5 1.2L13.9 12 3.6 1.5zM14.9 11l2.5-2.5L5.7 1.8 14.9 11zm0 2L5.7 22.2l11.7-6.7L14.9 13zm6.5-2.1l-2.8-1.6-2.7 2.7 2.7 2.7 2.8-1.6c.9-.5.9-1.7 0-2.2z"/>
+        </svg>
+        <span class="btn-text">
+          <small>Get it on</small>
+          Google Play
+        </span>
+      </a>
+    </div>
+
+    <p class="footer">If thou art not redirected, choose a store above.</p>
+  </main>
+
+  <script>
+    (function () {
+      var ios = "https://apps.apple.com/app/vedansh/id6766086529";
+      var android = "https://play.google.com/store/apps/details?id=com.prashantsharma.vedansh";
+      var ua = (navigator.userAgent || navigator.vendor || "").toLowerCase();
+      var note = document.getElementById("note");
+
+      var isIOS = /iphone|ipad|ipod/.test(ua) ||
+                  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      var isAndroid = /android/.test(ua);
+
+      if (isIOS) {
+        if (note) note.textContent = "Opening the App Store…";
+        window.location.replace(ios);
+      } else if (isAndroid) {
+        if (note) note.textContent = "Opening Google Play…";
+        window.location.replace(android);
+      } else {
+        if (note) note.textContent = "Choose thy store below.";
+      }
+    })();
+  </script>
+</body>
+</html>
